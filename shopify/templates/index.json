@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "16618538868a991d36": {
+      "type": "products",
+      "settings": {
+        "bg": "shopify:\/\/shop_images\/products-bg.png",
+        "title": "our best sellers",
+        "related_collection": "best-sellers"
+      }
+    }
+  },
+  "order": [
+    "16618538868a991d36"
+  ]
+}
