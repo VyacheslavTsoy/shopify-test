@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'F37 Ginger';
+    src: url('F37Ginger.woff2') format('woff2'),
+        url('F37Ginger.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
