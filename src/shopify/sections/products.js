@@ -19,20 +19,19 @@ const Products = {
         spaceBetween: 16,
         autoplay: true,
         modules: [Autoplay, Pagination],
+        loop: true,
         pagination: {
           el: '.swiper-pagination',
           type: 'bullets',
+          clickable: true,
         },
         breakpoints: {
           475: {
             slidesPerView: 2
           },
           767: {
-            slidesPerView: 3
-          },
-          1200: {
-            slidesPerView: 4,
-            spaceBetween: 32
+            slidesPerView: 3,
+            spaceBetween: 60
           }
         }
       });

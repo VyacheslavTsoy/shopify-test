@@ -1,67 +1,57 @@
 .products {
   text-align: center;
-  color: #242323;
-  padding: 58px 0 40px;
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-size: cover;
+  padding: 131px 0 93px;
 
-  @media screen and (max-width: 768px) {
-    padding-top: 73px;
+  @include down(md) {
+    padding: 50px 0 30px;
   }
 
   &__title {
-    font-size: 66px;
-    line-height: 1;
-    text-transform: uppercase;
-    font-weight: 400;
-    margin-bottom: 18px;
-    font-family: 'Adorn', sans-serif;
+    font-size: 40px;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 30px;
+    max-width: 612px;
+    margin-left: auto;
+    margin-right: auto;
 
-    @media screen and (max-width: 768px) {
-      font-size: 42px;
-      margin-bottom: 57px;
+    @include down(md) {
+      font-size: 34px;
+      line-height: 1.2;
+      margin-bottom: 20px;
     }
+  }
+
+  &__description {
+    max-width: 736px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &__list {
+    padding: 80px 20px 78px;
+    overflow: hidden;
+
+    @include down(md) {
+      padding: 50px 0 21px;
+    }
+
+    &.swiper-initialized .swiper-pagination {
+      display: flex;
+    }
+
     &:not(.swiper-initialized) .swiper-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-gap: 32px;
+      grid-gap: 46px;
 
-      @media screen and (max-width: 1200px) {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-
-      @media screen and (max-width: 900px) {
+      @include down(xl) {
+        grid-gap: 23px;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 16px;
       }
 
-      @media screen and (max-width: 540px) {
+      @include down(md) {
         grid-template-columns: 1fr;
-      }
-    }
-  }
-
-  .swiper-pagination {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    grid-gap: 8px;
-    padding: 23px 0;
-
-    .swiper-pagination-bullet {
-      display: block;
-      width: 10px;
-      height: 10px;
-      background-color: #e3e3e3;
-      border-radius: 50%;
-
-      &-active {
-        background-color: #ffd11f;
       }
     }
   }

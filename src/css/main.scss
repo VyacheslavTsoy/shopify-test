@@ -4,11 +4,13 @@
 
 @import "tailwindcss/components";
 @layer components {
+  @import "@/css/common/mixins.scss";
   @import "@/css/common/base.scss";
   @import "@/css/snippets/site-logo.scss";
   @import "@/css/sections/header.scss";
   @import "@/css/sections/products.scss";
   @import "@/css/snippets/product-item.scss";
+  @import "@/css/sections/testimonials.scss";
 }
 
 @import "tailwindcss/utilities";

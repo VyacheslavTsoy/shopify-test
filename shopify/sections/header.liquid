@@ -1,0 +1,133 @@
+<header data-section-type="header" data-section-id="{{ section.id }}">
+  {% comment %}<div class="relative bg-white">{% endcomment %}
+    {% comment %}<div class="mx-auto px-4 sm:px-6">{% endcomment %}
+      {% comment %}<div class="flex justify-between items-center py-6 md:justify-start md:space-x-10 gap-x-5">{% endcomment %}
+        {% comment %}<div class="flex justify-start lg:w-0 lg:flex-1">{% endcomment %}
+          {% comment %}{% render 'logo' %}{% endcomment %}
+        {% comment %}</div>{% endcomment %}
+        {% comment %}<div class="flex items-center justify-end md:flex-1 lg:w-0">{% endcomment %}
+          {% comment %}<p>{% endcomment %}
+            {% comment %}Items:{% endcomment %}
+            {% comment %}<strong data-cart-render="item_count"></strong>{% endcomment %}
+            {% comment %}Total:{% endcomment %}
+            {% comment %}<strong data-cart-render="total_price_money_with_currency"></strong>{% endcomment %}
+          {% comment %}</p>{% endcomment %}
+          {% comment %}<button type="button" class="ml-4" data-cart-open-close>{% endcomment %}
+            {% comment %}<svg{% endcomment %}
+              {% comment %}class="h-6 w-6 text-black"{% endcomment %}
+              {% comment %}viewBox="0 0 24 24"{% endcomment %}
+              {% comment %}fill="none"{% endcomment %}
+              {% comment %}stroke="currentColor"{% endcomment %}
+              {% comment %}stroke-width="2"{% endcomment %}
+              {% comment %}stroke-linecap="round"{% endcomment %}
+              {% comment %}stroke-linejoin="round"{% endcomment %}
+            {% comment %}>{% endcomment %}
+              {% comment %}<circle cx="9" cy="21" r="1" />  <circle cx="20" cy="21" r="1" />  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />{% endcomment %}
+            {% comment %}</svg>{% endcomment %}
+          {% comment %}</button>{% endcomment %}
+          {% comment %}<button{% endcomment %}
+            {% comment %}class="ml-4 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"{% endcomment %}
+            {% comment %}data-cart-clear{% endcomment %}
+          {% comment %}>{% endcomment %}
+            {% comment %}Clear{% endcomment %}
+          {% comment %}</button>{% endcomment %}
+        {% comment %}</div>{% endcomment %}
+      {% comment %}</div>{% endcomment %}
+    {% comment %}</div>{% endcomment %}
+    {% comment %}<div class="mx-auto" data-cart-view="data-cart-view">{% endcomment %}
+      {% comment %}<div class="overflow-x-auto relative">{% endcomment %}
+        {% comment %}<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">{% endcomment %}
+          {% comment %}<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">{% endcomment %}
+            {% comment %}<tr>{% endcomment %}
+              {% comment %}<th scope="col" class="py-3 px-6">Item</th>{% endcomment %}
+              {% comment %}<th scope="col" class="py-3 px-6">Price</th>{% endcomment %}
+              {% comment %}<th scope="col" class="py-3 px-6">Qty</th>{% endcomment %}
+              {% comment %}<th scope="col" class="py-3 px-6">Line Price</th>{% endcomment %}
+              {% comment %}<th scope="col" class="py-3 px-6">Action</th>{% endcomment %}
+            {% comment %}</tr>{% endcomment %}
+          {% comment %}</thead>{% endcomment %}
+          {% comment %}<tbody>{% endcomment %}
+            {% comment %}<tr{% endcomment %}
+              {% comment %}rv-show="cart.item_count | lt 1"{% endcomment %}
+              {% comment %}class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"{% endcomment %}
+            {% comment %}>{% endcomment %}
+              {% comment %}<td class="py-4 px-6">You don't have any items in your cart.</td>{% endcomment %}
+            {% comment %}</tr>{% endcomment %}
+            {% comment %}<tr{% endcomment %}
+              {% comment %}rv-each-item="cart.items"{% endcomment %}
+              {% comment %}class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"{% endcomment %}
+            {% comment %}>{% endcomment %}
+              {% comment %}<th{% endcomment %}
+                {% comment %}rv-text="item.title"{% endcomment %}
+                {% comment %}scope="row"{% endcomment %}
+                {% comment %}class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"{% endcomment %}
+              {% comment %}></th>{% endcomment %}
+              {% comment %}<td{% endcomment %}
+                {% comment %}rv-html="item.price | money Currency.currentCurrency"{% endcomment %}
+                {% comment %}class="py-4 px-6"{% endcomment %}
+              {% comment %}></td>{% endcomment %}
+              {% comment %}<td class="py-4 px-6">{% endcomment %}
+                {% comment %}<div class="flex gap-3 items-center justify-start">{% endcomment %}
+                  {% comment %}<a{% endcomment %}
+                    {% comment %}href="#"{% endcomment %}
+                    {% comment %}rv-data-cart-update="index | plus 1"{% endcomment %}
+                    {% comment %}rv-data-cart-quantity="item.quantity | minus 1"{% endcomment %}
+                    {% comment %}class="border rounded-md shadow-sm p-2"{% endcomment %}
+                  {% comment %}>{% endcomment %}
+                    {% comment %}<svg{% endcomment %}
+                      {% comment %}class="h-4 w-4 text-black"{% endcomment %}
+                      {% comment %}width="24"{% endcomment %}
+                      {% comment %}height="24"{% endcomment %}
+                      {% comment %}viewBox="0 0 24 24"{% endcomment %}
+                      {% comment %}stroke-width="2"{% endcomment %}
+                      {% comment %}stroke="currentColor"{% endcomment %}
+                      {% comment %}fill="none"{% endcomment %}
+                      {% comment %}stroke-linecap="round"{% endcomment %}
+                      {% comment %}stroke-linejoin="round"{% endcomment %}
+                    {% comment %}>{% endcomment %}
+                      {% comment %}<path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="12" x2="19" y2="12" />{% endcomment %}
+                    {% comment %}</svg>{% endcomment %}
+                  {% comment %}</a>{% endcomment %}
+                  {% comment %}<span rv-text="item.quantity"></span>{% endcomment %}
+                  {% comment %}<a{% endcomment %}
+                    {% comment %}href="#"{% endcomment %}
+                    {% comment %}rv-data-cart-update="index | plus 1"{% endcomment %}
+                    {% comment %}rv-data-cart-quantity="item.quantity | plus 1"{% endcomment %}
+                    {% comment %}class="border rounded-md shadow-sm p-2"{% endcomment %}
+                  {% comment %}>{% endcomment %}
+                    {% comment %}<svg{% endcomment %}
+                      {% comment %}class="h-4 w-4 text-black"{% endcomment %}
+                      {% comment %}width="24"{% endcomment %}
+                      {% comment %}height="24"{% endcomment %}
+                      {% comment %}viewBox="0 0 24 24"{% endcomment %}
+                      {% comment %}stroke-width="2"{% endcomment %}
+                      {% comment %}stroke="currentColor"{% endcomment %}
+                      {% comment %}fill="none"{% endcomment %}
+                      {% comment %}stroke-linecap="round"{% endcomment %}
+                      {% comment %}stroke-linejoin="round"{% endcomment %}
+                    {% comment %}>{% endcomment %}
+                      {% comment %}<path stroke="none" d="M0 0h24v24H0z"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />{% endcomment %}
+                    {% comment %}</svg>{% endcomment %}
+                  {% comment %}</a>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
+              {% comment %}</td>{% endcomment %}
+              {% comment %}<td{% endcomment %}
+                {% comment %}rv-html="item.line_price | money Currency.currentCurrency"{% endcomment %}
+                {% comment %}class="py-4 px-6"{% endcomment %}
+              {% comment %}></td>{% endcomment %}
+              {% comment %}<td class="py-4 px-6">{% endcomment %}
+                {% comment %}<a href="#" rv-data-cart-remove="index | plus 1">Remove</a>{% endcomment %}
+              {% comment %}</td>{% endcomment %}
+            {% comment %}</tr>{% endcomment %}
+          {% comment %}</tbody>{% endcomment %}
+        {% comment %}</table>{% endcomment %}
+      {% comment %}</div>{% endcomment %}
+    {% comment %}</div>{% endcomment %}
+  {% comment %}</div>{% endcomment %}
+</header>
+
+{% schema %}
+  {
+    "name": "Header"
+  }
+{% endschema %}

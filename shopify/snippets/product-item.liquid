@@ -1,0 +1,31 @@
+<div class="product-item">
+  {% if product.featured_image %}
+    <a href="{{ product.url }}" class="product-item__img">
+      <span class="product-item__ppd">
+        ${{ product.metafields.custom.price_per_day }} <small>/day</small>
+      </span>
+      {{ product.featured_image | img_url: '270x217' | img_tag }}
+    </a>
+  {% endif %}
+  <div class="product-item__caption">
+    {% if product.tags %}
+      <div class="product-item__tags">
+        {% for tag in product.tags %}
+          <div class="product-item__tag product-item__tag--{{ tag | handleize  }}">
+            <img src="{{ tag | handleize | append: '.svg' | asset_url }}" alt="" class="product-item__tag-icon">
+            {{ tag }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <h3 class="product-item__name"><a href="{{ product.url }}">{{ product.title }}</a></h3>
+
+    {% if product.price %}
+      <div class="product-item__price">
+        ${{ product.price | money_without_currency }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+

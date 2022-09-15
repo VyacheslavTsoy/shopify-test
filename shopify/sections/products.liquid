@@ -1,0 +1,64 @@
+{% assign sectionBg = section.settings.bg %}
+{% assign sectionTitle = section.settings.title %}
+{% assign sectionDescription = section.settings.description %}
+{% assign collectionHandle = section.settings.related_collection %}
+
+<div class="products" data-section-type="products" data-section-id="{{ section.id }}">
+    <div class="container">
+      {% if sectionTitle != empty %}
+        <h2 class="products__title">{{ sectionTitle }}</h2>
+      {% endif %}
+
+      {% if sectionDescription != empty %}
+        <div class="products__description">
+          {{ sectionDescription }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.related_collection != empty %}
+      <div class="products__list">
+        <div class="swiper-wrapper">
+        {% for product in collections[collectionHandle].products %}
+          <div class="swiper-slide">
+            {% render 'product-item', product: product %}
+          </div>
+        {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      {% endif %}
+
+
+      <div class="products__btn-wrap">
+        <a href="#" class="btn">See All Products</a>
+      </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "collection",
+      "id": "related_collection",
+      "label": "Related Collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Products"
+    }
+  ]
+}
+{% endschema %}
