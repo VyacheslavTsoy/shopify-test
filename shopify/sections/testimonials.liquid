@@ -9,50 +9,8 @@
     <div class="testimonials__list">
       <div class="swiper-wrapper">
       {%- for testimonial in testimonials_articles -%}
-        {% assign featImg = testimonial.image %}
-        {% assign meta = testimonial.metafields.testimonial %}
-        {% assign relProduct = meta.related_product %}
-        {% assign rating = meta.rating %}
-
         <div class="swiper-slide">
-          <blockqoute class="testimonials__item">
-            <div class="testimonials__item-main">
-
-              {% if featImg %}
-                <div class="testimonials__item-img">
-                  {{ featImg | img_url: '140x140' | img_tag }}
-                </div>
-              {% endif %}
-
-              <div class="testimonials__item-rating" data-rating="{{ rating }}"></div>
-
-              <h3 class="testimonials__item-title">{{ testimonial.title }}</h3>
-              <div class="testimonials__item-caption">
-                {{ testimonial.content }}
-              </div>
-            </div>
-
-            <div class="testimonials__item-footer">
-              <div class="testimonials__item-author">{{ meta.author_name }}</div>
-
-              {% if relProduct != empty %}
-                {% assign product = all_products[relProduct] %}
-                {% assign productImg = product.featured_image %}
-
-                <a href="{{ product.url }}" class="testimonials__product">
-                  <div class="testimonials__product-inner">
-                    <div class="testimonials__product-img">
-                      {{ productImg | img_url: '92x70' | img_tag }}
-                    </div>
-                    <div class="testimonials__product-name">
-                      {{ product.title }}
-                    </div>
-
-                  </div>
-                </a>
-              {% endif %}
-            </div>
-          </blockqoute>
+          {% render 'testimonial-item', testimonial: testimonial %}
         </div>
       {%- endfor -%}
       </div>
