@@ -1,5 +1,5 @@
 # Preview link
-https://hfjtpxedx7pa1qpl-55201431686.shopifypreview.com
+https://vtsoy.myshopify.com/
 
 ## По поводу верстки
 - Для реализации каруселей и слайдеров обычно использую SWIPER
